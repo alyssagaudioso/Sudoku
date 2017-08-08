@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  </head>
+  <body>
+    <div id="board"></div>
+
+    <button id="validate">Check</button>
+
+    <h1 id="result"></h1>
+
+    <script>
+      var $board = $('#board');
+      for (var i = 0; i < 9; i++) {
+        var $box = $('<div class="box">');
+        for (var j = 0; j < 9; j++) {
+          $box.append('<input type="text" maxlength="1" data-row="' +
+                      (Math.floor(i / 3) * 3 + Math.floor(j / 3)) +
+                      '" data-column="' + ((i % 3) * 3 + j % 3) + '">');
+        }
+        $board.append($box);
+      }
+    </script>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
